@@ -7,10 +7,10 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
-RUN  apt update
-RUN  apt install nodejs
+RUN  apt update -y
+RUN  apt install nodejs -y
 RUN node -v
-RUN  apt install npm
+RUN  apt install npm -y
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
